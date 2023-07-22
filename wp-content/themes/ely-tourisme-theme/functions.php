@@ -3,11 +3,11 @@
 function boilerplate_load_assets()
 {
 
-  wp_enqueue_style('ely-nomrmalize-css', get_theme_file_uri('/styles/normalize.css'));
-  wp_enqueue_style('ely-style-css', get_theme_file_uri('/styles/style.css'));
+  wp_enqueue_style('ely-nomrmalize-css', get_theme_file_uri('/styles/normalize.css'), array(), '1.1' );
+  wp_enqueue_style('ely-style-css', get_theme_file_uri('/styles/style.css'), array(), '1.1', );
 
   wp_enqueue_script('ely-all.min-js', get_theme_file_uri('/js/all.min.js'), array(), '1.1', false);
-  wp_enqueue_style('ely-all.min-css', get_theme_file_uri('/styles/all.min.css'));
+  wp_enqueue_style('ely-all.min-css', get_theme_file_uri('/styles/all.min.css'), array(), '1.1');
 }
 
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');

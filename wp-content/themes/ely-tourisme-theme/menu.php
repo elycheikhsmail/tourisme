@@ -1,69 +1,84 @@
-  
-    <nav>
-        <div class="iteme">
-            <ul>
-                <li class="logo">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-compact.svg' ?>" alt="logo">
-                </li>
+<nav>
+    <div class="iteme">
+        <ul>
+            <li class="logo">
+                <img src="<?php echo get_template_directory_uri() . '/images/logo-compact.svg' ?>" alt="logo">
+            </li>
 
 
-                <?php
+            <?php
 
-                // Récupère le menu par son emplacement
-                $menu_locations = get_nav_menu_locations();
-                $menu_id = $menu_locations['tours'];
-                $iteration_index = 0;
-                // Vérifie si le menu a été attribué à un emplacement
-                if ($menu_id) {
-                    $menu_items = wp_get_nav_menu_items($menu_id);
-                    // Supposons que $monObjet est votre objet dont vous voulez afficher les attributs
-                    //print_r($menu_items[4]->menu_item_parent);
-                    $init_menu_item_parent = $menu_items[0]->menu_item_parent;
-                    $has_no_parent_count = 0;
+            // Récupère le menu par son emplacement
+            $menu_locations = get_nav_menu_locations();
+            $menu_id = $menu_locations['tours'];
+            $iteration_index = 0;
+            // Vérifie si le menu a été attribué à un emplacement
+            if ($menu_id) {
+                $menu_items = wp_get_nav_menu_items($menu_id);
+                // Supposons que $monObjet est votre objet dont vous voulez afficher les attributs
+                //print_r($menu_items[4]->menu_item_parent);
+                $init_menu_item_parent = $menu_items[0]->menu_item_parent;
+                $has_no_parent_count = 0;
+                $title = '$menu_item->title';
 
 
-                    // Vérifie s'il y a des items dans le menu
-                    if ($menu_items) {
-                        // echo '<ul>';
-                        foreach ($menu_items as $menu_item) {
+                // Vérifie s'il y a des items dans le menu
+                if ($menu_items) {
+                    // echo '<ul>';
+                    foreach ($menu_items as $menu_item) {
 
-                            if (!$menu_item->menu_item_parent) {
+                        if (!$menu_item->menu_item_parent) {
 
-                                if ($has_no_parent_count > 1) {
-
-                                    echo '
-                                    </ul>
-                                    </Li>';
-                                    $has_no_parent_count = 0;
-                                    echo '<Li>' . $menu_item->title . '<ul class="dropdwon">';
-                                } else {
-                                    echo '<Li>' . $menu_item->title . '<ul class="dropdwon">';
-                                }
+                            if ($has_no_parent_count > 1) {
+                                ?>
+                            </ul>
+                            </Li>
+                            <?php $has_no_parent_count = 0; ?>
+                            <Li>
+                                <?php echo $menu_item->title; ?>
+                                <ul class="dropdwon">
+                                    <?php
                             } else {
-                                echo '<li class="dropdwon-iteme">' . $menu_item->title . '</li> ';
-                                $has_no_parent_count++;
+                                ?>
+
+                                    <Li>
+                                        <?php echo $menu_item->title; ?>
+                                        <ul class="dropdwon">
+
+                                            <?php
                             }
+                        } else {
+                            ?>
+                        <li class="dropdwon-iteme">
+                            <?php //echo $menu_item->title; ?>
+                            
+                            <a href="<?php echo $menu_item->url; ?>">
+                            <?php echo $menu_item->title; ?>
+                        </a>
+                        </li>
+                        <?php
+                        $has_no_parent_count++;
                         }
                     }
                 }
-                ?>
-            </ul>
+            }
+            ?>
+                    </ul>
+    </div>
+    <div class="contact">
+        <p class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            nouacchott, mouritania
+        </p>
+        <div class="icons">
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
         </div>
-        <div class="contact">
-            <p class="location">
-                <i class="fa-solid fa-location-dot"></i>
-                nouacchott, mouritania
-            </p>
-            <div class="icons">
-                <i class="fa-brands fa-google"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-            <p class="telephone">
-                <i class="fa-solid fa-phone"></i>
-                +222 34532523
-            </p>
-        </div>
-    </nav>
-
+        <p class="telephone">
+            <i class="fa-solid fa-phone"></i>
+            +222 34532523
+        </p>
+    </div>
+</nav>

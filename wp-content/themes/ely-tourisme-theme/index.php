@@ -12,7 +12,9 @@
                 <Li>
                     Book Now
                     <ul class="dropdwon">
-                        <li class="dropdwon-iteme">iteme one</li>
+                        <li class="dropdwon-iteme">
+                            <a href="http://localhost/wordpress/tours/group-tours">item one</a>
+                        </li>
                         <li class="dropdwon-iteme">iteme two</li>
                         <li class="dropdwon-iteme">iteme three</li>
                     </ul>
@@ -53,7 +55,7 @@
         <h1> okkkkkkkkkkk</h1>
 
     </div>
-  <?php require('menu.php') ?>
+    <?php require('menu.php') ?>
 
 
     <div>

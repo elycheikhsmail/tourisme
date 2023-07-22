@@ -76,7 +76,9 @@ nav > .contact > p {
 nav > .contact > p > .fa-location-dot {
     color: var(--color--luminous-vivid-orange);
 }
-
+nav  a{
+    text-decoration:none;
+}
 /* start dropdwon */
 .dropdwon {
     position: absolute;
