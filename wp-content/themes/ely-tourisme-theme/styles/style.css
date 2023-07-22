@@ -1,0 +1,105 @@
+/* start general config */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+:root {
+    --color--black: #000000;
+    --color--cyan-bluish-gray: #abb8c3;
+    --color--white: #ffffff;
+    --color--pale-pink: #f78da7;
+    --color--vivid-red: #cf2e2e;
+    --color--luminous-vivid-orange: #ff6900;
+    --color--luminous-vivid-amber: #fcb900;
+    --color--light-green-cyan: #7bdcb5;
+    --color--vivid-green-cyan: #00d084;
+    --color--pale-cyan-blue: #8ed1fc;
+    --color--vivid-cyan-blue: #0693e3;
+    --color--vivid-purple: #9b51e0;
+    --color--primary: #73BA9B;
+    --color--secondary: #BA2D0B;
+    --color--warning: #D27B03;
+    --color--info: #FDF5CE;
+    --color--light: #F5F5F5;
+    --color--dark: #3B3B3B;
+    --color--link: #485FC7;
+    --color--danger: #CE4433;
+    --trans--time: 500ms;
+}
+body {
+    font-family: "Fjalla One";
+    box-sizing: border-box;
+}
+/* end general config */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color--info);
+    z-index: 1;
+}
+nav .iteme {
+    height: 90px;
+}
+nav > .iteme > ul {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding-left: 0;
+}
+nav > .iteme > ul > li {
+    list-style: none;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background-color var(--trans--time), color var(--trans--time);
+}
+nav > .iteme > ul > li:hover {
+    background-color: var(--color--luminous-vivid-amber);
+    color: var(--color--danger);
+}
+nav > .iteme > ul > .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+nav > .iteme > ul > .logo > img {
+    width: 80px;
+}
+nav > .contact {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+nav > .contact > p {
+    margin: 0;
+}
+nav > .contact > p > .fa-location-dot {
+    color: var(--color--luminous-vivid-orange);
+}
+
+/* start dropdwon */
+.dropdwon {
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    list-style-type: none;
+    padding-left: 0;
+    background-color: var(--color--info);
+    display: none;
+}
+.dropdwon-iteme {
+    padding: 16px 24px;
+    width: 180px;
+    color: #000000;
+    transition: background-color var(--trans--time), color var(--trans--time), padding var(--trans--time);
+}
+.dropdwon-iteme:hover {
+    background-color: var(--color--light-green-cyan);
+    color: var(--color--info);
+    padding-left: 28px;
+}
+li:hover > .dropdwon{
+    display: block;
+}
+/* end dropdwon */

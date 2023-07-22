@@ -11,4 +11,3 @@
         <h1 class="text-3xl py-10"><a href="<?php echo get_home_url(); ?>" class="hover:text-blue-500">Welcome To Our Header!</a></h1>
       </div>
     </div>
-     
