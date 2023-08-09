@@ -19,4 +19,3 @@ commands:
   - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   - mkdir -p ~/.local/bin && mv wp-cli.phar ~/.local/bin/wp && chmod +x $_
   - wp core install --url=${DOMAIN} --title="tourisme" --admin_user=admin --admin_password=${PASSWORD} --admin_email=admin@${DOMAIN}
- 
