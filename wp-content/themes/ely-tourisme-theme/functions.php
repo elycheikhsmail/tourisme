@@ -33,3 +33,6 @@ function register_my_menus() {
   );
 }
 add_action( 'init', 'register_my_menus' );
+// add feature image
+//add_theme_support('post-thumnails');
+add_theme_support('post-thumbnails');

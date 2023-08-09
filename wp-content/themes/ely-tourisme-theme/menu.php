@@ -7,11 +7,13 @@
 
 
             <?php
-
+            $iteration_index = 0;
+            $index_service_in_menu = 3;
             // Récupère le menu par son emplacement
             $menu_locations = get_nav_menu_locations();
-            $menu_id = $menu_locations['tours'];
-            $iteration_index = 0;
+            //print_r($menu_locations) ;
+            $menu_id = $menu_locations['header-menu'];
+
             // Vérifie si le menu a été attribué à un emplacement
             if ($menu_id) {
                 $menu_items = wp_get_nav_menu_items($menu_id);
@@ -24,46 +26,67 @@
 
                 // Vérifie s'il y a des items dans le menu
                 if ($menu_items) {
-                    // echo '<ul>';
+
                     foreach ($menu_items as $menu_item) {
-
                         if (!$menu_item->menu_item_parent) {
-
+                            $iteration_index++;
+                            //error_log('iteration_index : ' . $iteration_index);
+ 
                             if ($has_no_parent_count > 1) {
                                 ?>
-                            </ul>
-                            </Li>
-                            <?php $has_no_parent_count = 0; ?>
+                                <?php $has_no_parent_count = 0; ?>
+                                <?php
+                                if ($iteration_index < 3) {
+                                    ?>
+                                </ul>
+                                </Li>
+                                <Li>
+                                    <?php echo $menu_item->title; ?>
+                                    <ul class="dropdwon">
+                                    <?php } else { // $iteration_index >= 3
+                                    ?>
+                                    </ul>
+                                </Li>
+
+                                <li class="dropdwon-iteme">
+
+                                    <a href="<?php echo $menu_item->url; ?>">
+                                        <?php echo $menu_item->title; ?>
+                                    </a>
+                                </li>
+
+
+                                <?php
+
+                                } ?>
+
+                        <?php } else {
+                                ?>
+
                             <Li>
                                 <?php echo $menu_item->title; ?>
                                 <ul class="dropdwon">
+
                                     <?php
-                            } else {
-                                ?>
-
-                                    <Li>
-                                        <?php echo $menu_item->title; ?>
-                                        <ul class="dropdwon">
-
-                                            <?php
                             }
                         } else {
                             ?>
-                        <li class="dropdwon-iteme">
-                            <?php //echo $menu_item->title; ?>
-                            
-                            <a href="<?php echo $menu_item->url; ?>">
-                            <?php echo $menu_item->title; ?>
-                        </a>
-                        </li>
-                        <?php
-                        $has_no_parent_count++;
+                <li class="dropdwon-iteme">
+                    <?php //echo $menu_item->title; 
+                                    ?>
+
+                                    <a href="<?php echo $menu_item->url; ?>">
+                        <?php echo $menu_item->title; ?>
+                    </a>
+                </li>
+                <?php
+                $has_no_parent_count++;
                         }
                     }
                 }
             }
             ?>
-                    </ul>
+            </ul>
     </div>
     <div class="contact">
         <p class="location">
