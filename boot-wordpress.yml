@@ -1,4 +1,4 @@
-source: https://github.com/elycheikhsmail/tourisme/archive/refs/tags/v0.0.1.zip
+source: https://github.com/elycheikhsmail/tourisme/archive/refs/heads/main.zip#tourisme-main/tourisme-main
 features:
   - mysql
   - firewall
