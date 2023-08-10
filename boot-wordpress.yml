@@ -1,4 +1,4 @@
-source: https://wordpress.org/latest.zip#wordpress
+source: https://codeload.github.com/elycheikhsmail/tourisme/zip/refs/heads/main
 features:
   - mysql
   - firewall
