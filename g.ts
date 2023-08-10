@@ -2,7 +2,7 @@ import nunjucks from "npm:nunjucks";
 nunjucks.configure("views");
 
 const options = {
-  DB_NAME: `${Deno.env.get("DATABASE")}_db`,
+  DB_NAME: `${Deno.env.get("DATABASE")}`,
   DB_USER: Deno.env.get("USERNAME"),
   DB_PASSWORD: Deno.env.get("PASSWORD"),
 };
