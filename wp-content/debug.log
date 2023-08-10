@@ -12,3 +12,4 @@
 [07-Aug-2023 19:17:29 UTC] 
 [07-Aug-2023 19:18:42 UTC] 
 [07-Aug-2023 19:18:42 UTC] 
+[10-Aug-2023 16:03:54 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\tourisme\wp-includes\class-wpdb.php on line 2019
