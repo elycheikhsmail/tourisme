@@ -10,6 +10,6 @@ const output = nunjucks.render("wp-config.j2", options);
  
 
 
-Deno.writeTextFileSync("wp-config1.php", output, 
+Deno.writeTextFileSync("wp-config.php", output, 
 { create: true });
 console.log("create wp-config.php using deno");

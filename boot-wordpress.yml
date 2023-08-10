@@ -13,4 +13,7 @@ nginx:
     - match: ~ /xmlrpc\.php$
       deny: all
 commands:
+  - echo username: $USERNAME
+  - echo db : $DATABASE
+  - echo password : $PASSWORD 
   - deno task g
