@@ -1,8 +1,7 @@
 source: https://github.com/elycheikhsmail/tourisme/archive/refs/heads/main.zip#tourisme-main
 features:
   - mysql
-  - php latest
-  - deno lts
+  - php latest 
   - firewall
 nginx:
   root: public_html
@@ -13,7 +12,8 @@ nginx:
     - match: ~ /xmlrpc\.php$
       deny: all
 commands:
-  - echo username: $USERNAME
-  - echo db : $DATABASE
-  - echo password : $PASSWORD 
-  - deno task g
+  - cp wp-config-sample.php wp-config.php
+  - sed -i "s/votre_nom_de_bdd/${DATABASE}/g" wp-config.php
+  - sed -i "s/votre_utilisateur_de_bdd/${USERNAME}/g" wp-config.php
+  - sed -i "s/votre_mdp_de_bdd/${PASSWORD}/g" wp-config.php
+  - sed -i "s/utf8/utf8mb4/g" wp-config.php
